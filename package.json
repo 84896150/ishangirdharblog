@@ -70,7 +70,7 @@
             },
             "home_hero_title": {
                 "type": "text",
-                "default": "Hay, I am Arun",
+                "default": "Hay, I am Ishan",
                 "group": "homepage"
             },
             "home_hero_description_override": {
