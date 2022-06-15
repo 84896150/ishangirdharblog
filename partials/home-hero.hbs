@@ -1,0 +1,45 @@
+<section class="home-cover-area">
+    <div class="container">
+        <div class="row home-cover-wrap{{#if @site.cover_image}} has-cover-image{{/if}}">
+            {{#if @site.cover_image}}
+            <div class="col-lg-5">
+                <div class="cover-img-container">
+                    <div class="cover-img-wrap">
+                        <img  loading="lazy"
+                            srcset="{{img_url @site.cover_image size="s"}} ,
+                                    {{img_url @site.cover_image size="m"}} 1.5x"
+                            src="{{img_url @site.cover_image size="s"}}" alt="{{@site.title}} cover image">
+
+                        <div class="dot-parent dot-1"><div class="dot"></div></div>
+                        <div class="dot-parent dot-2"><div class="dot"></div></div>
+                        <div class="dot-parent dot-3"><div class="dot"></div></div>
+                        <div class="dot-parent dot-4"><div class="dot"></div></div>
+                        <div class="dot-parent dot-5"><div class="dot"></div></div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            <div class="col-lg-7">
+                <div class="home-cover-content-wrap">
+                    {{#if @custom.home_hero_title}}
+                    <h1 class="heading-large">{{@custom.home_hero_title}}</h1>
+                    {{/if}}
+                    <div class="intro-description">
+                        {{#if @custom.home_hero_description_override}}
+                        {{@custom.home_hero_description_override}}
+                        {{else}}
+                        {{@site.description}}
+                        {{/if}}
+                    </div>
+                    {{#if @custom.show_home_hero_subscription_form}}
+                    {{> home-hero-subscription}}
+                    {{/if}}
+                    {{#if @custom.show_home_hero_social_links}}
+                    {{> social-links}}
+                    {{/if}}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
